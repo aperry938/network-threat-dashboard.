@@ -1,5 +1,4 @@
 # network-threat-dashboard.
-```mermaid
 graph TD
     subgraph "Data Ingestion & Storage"
         A[🌐 VPC Flow Logs] --> B[🔥 Amazon Kinesis Data Firehose];
@@ -14,8 +13,8 @@ graph TD
 
     subgraph "Alerting & Visualization"
         D -- "If Score > Threshold" --> F[🔔 Amazon SNS Topic];
-        F --> G[👨‍💻 SOC Team <br/>(via Email/PagerDuty)];
+        F --> G[👨‍💻 SOC Team <br/>via Email/PagerDuty];
         D -- "Time-Series Metrics" --> H[📊 Amazon Timestream];
-        I[🖥️ React.js Dashboard <br/>(Hosted on AWS Amplify)] -- "Queries Data" --> H;
+        I[🖥️ React.js Dashboard <br/>Hosted on AWS Amplify] -- "Queries Data" --> H;
         I --> G;
     end
